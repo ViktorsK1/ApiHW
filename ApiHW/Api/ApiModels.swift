@@ -6,3 +6,14 @@
 //
 
 import Foundation
+
+struct PostsModel: Codable {
+    let posts: [PostsData]
+}
+
+struct PostsData: Codable {
+    let title: String?
+    let preview_text: String?
+    let likes_count: Int?
+    let timeshamp: Int?
+}

@@ -10,7 +10,7 @@ import UIKit
 class PostListVC: UIViewController {
 
     let mainView = PostListView()
-//    var apiData:
+    var apiData: [PostsData]?
     
     override func loadView() {
         configView()
