@@ -7,6 +7,7 @@
 
 import UIKit
 import PinLayout
+import SnapKit
 
 class PostListView: UIView {
 
@@ -14,16 +15,17 @@ class PostListView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = .white
+        backgroundColor = .white
+        apiTableView.allowsSelection = false
+        apiTableView.separatorStyle = .none
         addSubview(apiTableView)
+        
+        apiTableView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        apiTableView.pin.all()
     }
 }

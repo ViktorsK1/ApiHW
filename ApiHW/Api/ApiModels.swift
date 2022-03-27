@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct PostsModel: Codable {
-    let posts: [PostsData]
+struct PostsData: Codable {
+    let posts: [PostsDetailData]
 }
 
-struct PostsData: Codable {
+struct PostsDetailData: Codable {
     let title: String?
     let preview_text: String?
     let likes_count: Int?

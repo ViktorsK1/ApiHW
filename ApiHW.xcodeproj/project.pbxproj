@@ -7,27 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5EC5979F27EF389D00E8364B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC5979E27EF389D00E8364B /* Constants.swift */; };
 		5ECFB09A27EA6F8E00FE0081 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECFB09927EA6F8E00FE0081 /* AppDelegate.swift */; };
 		5ECFB09E27EA6F8E00FE0081 /* PostListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECFB09D27EA6F8E00FE0081 /* PostListVC.swift */; };
 		5ECFB0A327EA6F9400FE0081 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5ECFB0A227EA6F9400FE0081 /* Assets.xcassets */; };
 		5ECFB0A627EA6F9400FE0081 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ECFB0A427EA6F9400FE0081 /* LaunchScreen.storyboard */; };
-		5EFA1CC227EA7A52004C1EAC /* CustomTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFA1CC127EA7A52004C1EAC /* CustomTableCell.swift */; };
+		5EFA1CC227EA7A52004C1EAC /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFA1CC127EA7A52004C1EAC /* PostTableViewCell.swift */; };
 		5EFA1CC427EA7A71004C1EAC /* PostListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFA1CC327EA7A71004C1EAC /* PostListView.swift */; };
 		5EFA1CC827EB3D97004C1EAC /* ApiModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFA1CC727EB3D97004C1EAC /* ApiModels.swift */; };
+		5EFA1CCA27EC9A96004C1EAC /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFA1CC927EC9A96004C1EAC /* Networking.swift */; };
 		E3EB5301C0B382D53802CB97 /* libPods-ApiHW.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F77118A0D9C7865968CA9E7 /* libPods-ApiHW.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3F77118A0D9C7865968CA9E7 /* libPods-ApiHW.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ApiHW.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5EC5979E27EF389D00E8364B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5ECFB09627EA6F8E00FE0081 /* ApiHW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApiHW.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ECFB09927EA6F8E00FE0081 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5ECFB09D27EA6F8E00FE0081 /* PostListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListVC.swift; sourceTree = "<group>"; };
 		5ECFB0A227EA6F9400FE0081 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5ECFB0A527EA6F9400FE0081 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5ECFB0A727EA6F9400FE0081 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5EFA1CC127EA7A52004C1EAC /* CustomTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableCell.swift; sourceTree = "<group>"; };
+		5EFA1CC127EA7A52004C1EAC /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		5EFA1CC327EA7A71004C1EAC /* PostListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListView.swift; sourceTree = "<group>"; };
 		5EFA1CC727EB3D97004C1EAC /* ApiModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiModels.swift; sourceTree = "<group>"; };
+		5EFA1CC927EC9A96004C1EAC /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		B3B2B20FA64DCD414B64E4F5 /* Pods-ApiHW.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApiHW.debug.xcconfig"; path = "Target Support Files/Pods-ApiHW/Pods-ApiHW.debug.xcconfig"; sourceTree = "<group>"; };
 		E6E1D6B63EDB07299A57AA53 /* Pods-ApiHW.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApiHW.release.xcconfig"; path = "Target Support Files/Pods-ApiHW/Pods-ApiHW.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -77,6 +81,7 @@
 		5EFA1CC027EA79D0004C1EAC /* Supp files */ = {
 			isa = PBXGroup;
 			children = (
+				5EC5979E27EF389D00E8364B /* Constants.swift */,
 				5ECFB09927EA6F8E00FE0081 /* AppDelegate.swift */,
 				5ECFB0A227EA6F9400FE0081 /* Assets.xcassets */,
 				5ECFB0A427EA6F9400FE0081 /* LaunchScreen.storyboard */,
@@ -88,7 +93,7 @@
 		5EFA1CC527EA7A89004C1EAC /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				5EFA1CC127EA7A52004C1EAC /* CustomTableCell.swift */,
+				5EFA1CC127EA7A52004C1EAC /* PostTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -96,6 +101,7 @@
 		5EFA1CC627EB3D78004C1EAC /* Api */ = {
 			isa = PBXGroup;
 			children = (
+				5EFA1CC927EC9A96004C1EAC /* Networking.swift */,
 				5EFA1CC727EB3D97004C1EAC /* ApiModels.swift */,
 			);
 			path = Api;
@@ -214,9 +220,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5EFA1CC227EA7A52004C1EAC /* CustomTableCell.swift in Sources */,
+				5EFA1CC227EA7A52004C1EAC /* PostTableViewCell.swift in Sources */,
 				5ECFB09E27EA6F8E00FE0081 /* PostListVC.swift in Sources */,
 				5EFA1CC827EB3D97004C1EAC /* ApiModels.swift in Sources */,
+				5EFA1CCA27EC9A96004C1EAC /* Networking.swift in Sources */,
+				5EC5979F27EF389D00E8364B /* Constants.swift in Sources */,
 				5EFA1CC427EA7A71004C1EAC /* PostListView.swift in Sources */,
 				5ECFB09A27EA6F8E00FE0081 /* AppDelegate.swift in Sources */,
 			);
