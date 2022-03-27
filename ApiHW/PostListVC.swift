@@ -82,9 +82,7 @@ extension PostListVC: UITableViewDataSource {
         cell.apply(cellDetailData[indexPath.row])
         cell.fullTextButton.addTarget(self, action: #selector(connected(sender:)), for: .touchUpInside)
         cell.fullTextButton.tag = indexPath.row
-        cell.likeLabel.text = "💙"
-//        "♥️💚💛🖤"
-        
+
         return cell
     }
     

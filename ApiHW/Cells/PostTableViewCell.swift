@@ -21,6 +21,7 @@ class PostTableViewCell: UITableViewCell {
     let likeLabel = UILabel()
     let likesCountLabel = UILabel()
     let timeshampLabel = UILabel()
+    let separatorLineLabel = UILabel()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -36,6 +37,7 @@ class PostTableViewCell: UITableViewCell {
         fullTextButton.backgroundColor = .orange
         contentView.addSubview(fullTextButton)
         
+        likeLabel.text = "♥️"
         likeLabel.textAlignment = .center
         contentView.addSubview(likeLabel)
         
@@ -44,6 +46,9 @@ class PostTableViewCell: UITableViewCell {
         
         timeshampLabel.textAlignment = .right
         contentView.addSubview(timeshampLabel)
+
+        separatorLineLabel.backgroundColor = .lightGray
+        contentView.addSubview(separatorLineLabel)
         
         titleLabel.snp.makeConstraints {
             $0.top.equalToSuperview().offset(10)
@@ -72,12 +77,19 @@ class PostTableViewCell: UITableViewCell {
         likesCountLabel.snp.makeConstraints {
             $0.top.equalTo(fullTextButton.snp.bottom).offset(10)
             $0.leading.equalTo(likeLabel.snp.trailing).offset(10)
-            $0.bottom.equalToSuperview()
         }
         
         timeshampLabel.snp.makeConstraints {
             $0.top.equalTo(fullTextButton.snp.bottom).offset(10)
             $0.trailing.equalToSuperview().offset(-10)
+        }
+        
+        separatorLineLabel.snp.makeConstraints {
+            $0.top.equalTo(likeLabel.snp.bottom).offset(10)
+            $0.leading.equalToSuperview()
+            $0.trailing.equalToSuperview()
+            $0.height.equalTo(10)
+            $0.bottom.equalToSuperview()
         }
         
     }
