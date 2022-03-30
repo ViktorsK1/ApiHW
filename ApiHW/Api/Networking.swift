@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 enum Result<Value> {
     case success(Value)
@@ -15,7 +16,7 @@ enum Result<Value> {
 class NetworkingServise {
     
     func fetchPosts(with completion: ((Result<PostsModel>) -> Void)?) {
-    
+        
         var request = URLRequest(url: Constants.postsURL)
         request.httpMethod = "GET"
         
@@ -39,7 +40,7 @@ class NetworkingServise {
     }
     
     func fetchPost(with id: Int, _ completion: ((Result<PostIDDetailData>) -> Void)?) {
-    
+        
         guard let url = URL(string: "https://raw.githubusercontent.com/aShaforostov/jsons/master/api/posts/\(id).json") else { return }
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
@@ -61,6 +62,21 @@ class NetworkingServise {
             }
         }
         task.resume()
+    }
+    
+    func downloadImage(from url: String, with completion: @escaping(UIImage) -> ()) {
+        guard let url = URL(string: url) else { return }
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            guard
+                let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
+                let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
+                let data = data, error == nil,
+                let image = UIImage(data: data)
+            else { return }
+            DispatchQueue.main.async() {
+                completion(image)
+            }
+        }.resume()
     }
     
 }
