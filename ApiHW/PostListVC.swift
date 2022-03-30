@@ -92,4 +92,8 @@ extension PostListVC: UITableViewDataSource {
         mainView.apiTableView.reloadData()
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = DetailPostVC(postId: cellDetailData[indexPath.row].data.postId)
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }

@@ -16,7 +16,7 @@ class PostListView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .white
-        apiTableView.allowsSelection = false
+//        apiTableView.allowsSelection = false
         apiTableView.separatorStyle = .none
         addSubview(apiTableView)
         
