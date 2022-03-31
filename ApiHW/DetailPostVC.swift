@@ -12,7 +12,11 @@ class DetailPostVC: UIViewController {
     private let mainView = DetailPostView()
     private let networkingServise = NetworkingServise()
     private let postId: Int
-    private(set) var viewModel: PostIDDetailData?
+    private(set) var viewModel: PostIDDetailData? {
+        didSet {
+            mainView.detailApiTableView.reloadData()
+        }
+    }
     private(set) var images = [UIImage]()
     
     init(postId: Int) {
@@ -70,7 +74,7 @@ extension DetailPostVC: UITableViewDataSource {
         switch indexPath.section {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifierTextTableView", for: indexPath) as! DetailPostTextTableViewCell
-
+            cell.setUp(title: viewModel?.title, fullText: viewModel?.text)
             return cell
 
         case 1:
@@ -80,7 +84,7 @@ extension DetailPostVC: UITableViewDataSource {
 
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifierLikesAndTimeshampTableView", for: indexPath) as! DetailPostLikesAndTimeshampTableViewCell
-            cell.setUp(likesCount: viewModel?.likes_count, timesShamp: viewModel?.timeshamp)
+//            cell.setUp(likesCount: viewModel?.likes_count, timesShamp: viewModel?.timeshamp)
             return cell
 
         default:

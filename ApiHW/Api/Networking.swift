@@ -53,8 +53,8 @@ class NetworkingServise {
                 } else if let jsonData = responseData {
                     let decoder = JSONDecoder()
                     do {
-                        let data = try decoder.decode(PostIDDetailData.self, from: jsonData)
-                        completion?(.success(data))
+                        let data = try decoder.decode(PostIDData.self, from: jsonData)
+                        completion?(.success(data.post))
                     } catch {
                         completion?(.failure(error))
                     }

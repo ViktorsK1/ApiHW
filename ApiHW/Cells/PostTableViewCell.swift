@@ -22,15 +22,27 @@ class PostTableViewCell: UITableViewCell {
     let likesCountLabel = UILabel()
     let timeshampLabel = UILabel()
     let separatorLineLabel = UILabel()
+    let formatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.timeZone = .current
+        formatter.locale = .current
+        formatter.timeStyle = .full
+        formatter.dateFormat = "MM-dd-yyyy HH:mm"
+        return formatter
+    }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         selectionStyle = .none
         
         titleLabel.numberOfLines = 0
+        titleLabel.textAlignment = .natural
+        titleLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 21.0)
         contentView.addSubview(titleLabel)
         
         previewTextLabel.numberOfLines = 2
+        previewTextLabel.textAlignment = .natural
+        previewTextLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 15.0)
         contentView.addSubview(previewTextLabel)
         
         fullTextButton.setTitle("показать больше", for: .normal)
@@ -52,21 +64,21 @@ class PostTableViewCell: UITableViewCell {
         
         titleLabel.snp.makeConstraints {
             $0.top.equalToSuperview().offset(10)
-            $0.leading.equalToSuperview().offset(10)
-            $0.trailing.equalToSuperview().offset(-10)
+            $0.leading.equalToSuperview().offset(20)
+            $0.trailing.equalToSuperview().offset(-20)
         }
         
         previewTextLabel.snp.makeConstraints {
             $0.top.equalTo(titleLabel.snp.bottom).offset(10)
-            $0.leading.equalToSuperview().offset(10)
-            $0.trailing.equalToSuperview().offset(-10)
+            $0.leading.equalToSuperview().offset(20)
+            $0.trailing.equalToSuperview().offset(-20)
         }
         
         fullTextButton.snp.makeConstraints {
             $0.top.equalTo(previewTextLabel.snp.bottom).offset(10)
             $0.leading.equalToSuperview()
             $0.trailing.equalToSuperview()
-            $0.height.equalTo(50)
+            $0.height.equalTo(40)
         }
         
         likeLabel.snp.makeConstraints {
@@ -110,6 +122,17 @@ class PostTableViewCell: UITableViewCell {
             fullTextButton.setTitle("показать меньше", for: .normal)
         }
         likesCountLabel.text = "\(vm.data.likes_count ?? 0)"
-        timeshampLabel.text = "\(vm.data.timeshamp ?? 0)"
+        
+        let epochTime = TimeInterval(vm.data.timeshamp ?? 0) / 1000
+        let date = Date(timeIntervalSinceNow: -epochTime)
+        let dateString = formatter.string(from: date)
+        timeshampLabel.text = dateString
+
+//        let seconds = vm.data.timeshamp ?? 0
+//        let pastDate = Date(timeIntervalSince1970: TimeInterval(seconds))
+//        timeshampLabel.text = "\(pastDate.timeAgoDisplay())"
+        
+        //        timeshampLabel.text = "\(vm.data.timeshamp ?? 0)"
+
     }
 }

@@ -17,7 +17,6 @@ class DetailPostImageTableViewCell: UITableViewCell {
         
         addSubview(fullImageView)
         
-        
         fullImageView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }

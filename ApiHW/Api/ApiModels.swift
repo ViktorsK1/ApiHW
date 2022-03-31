@@ -19,8 +19,12 @@ struct PostsDetailData: Codable {
     let timeshamp: Int?
 }
 
+struct PostIDData: Codable {
+    let post: PostIDDetailData
+}
+
 struct PostIDDetailData: Codable {
-    let postId: String?
+    let postId: Int
     let timeshamp: Int?
     let title: String?
     let text: String?
