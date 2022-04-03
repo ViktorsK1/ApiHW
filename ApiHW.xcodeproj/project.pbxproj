@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5E3CD5AE27F99AE400A05937 /* ThreadSafeArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3CD5AD27F99AE400A05937 /* ThreadSafeArray.swift */; };
 		5E3CD5B027F9AB6100A05937 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3CD5AF27F9AB6100A05937 /* String.swift */; };
+		5E4E2BB127FA074B00869545 /* LikesAndTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4E2BB027FA074B00869545 /* LikesAndTimeView.swift */; };
 		5EC5979F27EF389D00E8364B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC5979E27EF389D00E8364B /* Constants.swift */; };
 		5ECF5EC127F301AB00C0F02B /* DetailPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECF5EC027F301AB00C0F02B /* DetailPostView.swift */; };
 		5ECF5EC327F301D200C0F02B /* DetailPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECF5EC227F301D200C0F02B /* DetailPostVC.swift */; };
@@ -31,6 +32,7 @@
 		3F77118A0D9C7865968CA9E7 /* libPods-ApiHW.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ApiHW.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E3CD5AD27F99AE400A05937 /* ThreadSafeArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadSafeArray.swift; sourceTree = "<group>"; };
 		5E3CD5AF27F9AB6100A05937 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		5E4E2BB027FA074B00869545 /* LikesAndTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesAndTimeView.swift; sourceTree = "<group>"; };
 		5EC5979E27EF389D00E8364B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5ECF5EC027F301AB00C0F02B /* DetailPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPostView.swift; sourceTree = "<group>"; };
 		5ECF5EC227F301D200C0F02B /* DetailPostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPostVC.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				5EFA1CC327EA7A71004C1EAC /* PostListView.swift */,
 				5ECF5EC227F301D200C0F02B /* DetailPostVC.swift */,
 				5ECF5EC027F301AB00C0F02B /* DetailPostView.swift */,
+				5E4E2BB027FA074B00869545 /* LikesAndTimeView.swift */,
 				5EFA1CC527EA7A89004C1EAC /* Cells */,
 				5ED9ECA127F5DB3D007CA4A1 /* Extensions */,
 				5EFA1CC027EA79D0004C1EAC /* Supp files */,
@@ -258,6 +261,7 @@
 				5ECF5EC127F301AB00C0F02B /* DetailPostView.swift in Sources */,
 				5ECF5ECA27F382CE00C0F02B /* DetailPostLikesAndTimeshampTableViewCell.swift in Sources */,
 				5EFA1CCA27EC9A96004C1EAC /* Networking.swift in Sources */,
+				5E4E2BB127FA074B00869545 /* LikesAndTimeView.swift in Sources */,
 				5ECF5EC327F301D200C0F02B /* DetailPostVC.swift in Sources */,
 				5EC5979F27EF389D00E8364B /* Constants.swift in Sources */,
 				5ED9ECA327F5DB62007CA4A1 /* Date.swift in Sources */,

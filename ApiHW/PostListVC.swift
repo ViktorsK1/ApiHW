@@ -81,6 +81,7 @@ extension PostListVC: UITableViewDataSource {
         cell.apply(cellDetailData[indexPath.row])
         cell.fullTextButton.addTarget(self, action: #selector(connected(sender:)), for: .touchUpInside)
         cell.fullTextButton.tag = indexPath.row
+//        cell.setLikesAndTime([indexPath.row])
 
         return cell
     }
