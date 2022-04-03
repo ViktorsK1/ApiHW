@@ -14,10 +14,11 @@ class DetailPostVC: UIViewController {
     private let postId: Int
     private(set) var viewModel: PostIDDetailData? {
         didSet {
+            title = viewModel?.title
             mainView.detailApiTableView.reloadData()
         }
     }
-    private(set) var images = [UIImage]()
+    private(set) var images = ThreadSafeArray<UIImage>()
     
     init(postId: Int) {
         self.postId = postId
@@ -34,16 +35,26 @@ class DetailPostVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "\(postId)"
         
         networkingServise.fetchPost(with: postId) { [weak self] result in
             switch result {
             case .success(let data):
                 self?.viewModel = data
+                guard let dataImage = data.images else { return }
+
+                dataImage.forEach { url in
+                    self?.networkingServise.downloadImage(from: url) { image in
+                        self?.images.append(image)
+                        DispatchQueue.main.async {
+                            self?.mainView.detailApiTableView.reloadSections(.init(integer: 1), with: .none)
+                        }
+                    }
+                }
             case .failure(let error):
                 print(error)
             }
         }
+
     }
     
     func configView() {
@@ -79,12 +90,14 @@ extension DetailPostVC: UITableViewDataSource {
 
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifierImageTableView", for: indexPath) as! DetailPostImageTableViewCell
-
+            if let image = images.get(index: indexPath.row) {
+                cell.apply(image: image, width: tableView.bounds.size.width)
+            }
             return cell
 
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifierLikesAndTimeshampTableView", for: indexPath) as! DetailPostLikesAndTimeshampTableViewCell
-//            cell.setUp(likesCount: viewModel?.likes_count, timesShamp: viewModel?.timeshamp)
+            cell.setUp(likesCount: viewModel?.likes_count, timesShamp: viewModel?.timeshamp)
             return cell
 
         default:

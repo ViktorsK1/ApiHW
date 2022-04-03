@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E3CD5AE27F99AE400A05937 /* ThreadSafeArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3CD5AD27F99AE400A05937 /* ThreadSafeArray.swift */; };
+		5E3CD5B027F9AB6100A05937 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3CD5AF27F9AB6100A05937 /* String.swift */; };
 		5EC5979F27EF389D00E8364B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC5979E27EF389D00E8364B /* Constants.swift */; };
 		5ECF5EC127F301AB00C0F02B /* DetailPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECF5EC027F301AB00C0F02B /* DetailPostView.swift */; };
 		5ECF5EC327F301D200C0F02B /* DetailPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECF5EC227F301D200C0F02B /* DetailPostVC.swift */; };
@@ -18,7 +20,6 @@
 		5ECFB0A327EA6F9400FE0081 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5ECFB0A227EA6F9400FE0081 /* Assets.xcassets */; };
 		5ECFB0A627EA6F9400FE0081 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ECFB0A427EA6F9400FE0081 /* LaunchScreen.storyboard */; };
 		5ED9ECA327F5DB62007CA4A1 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED9ECA227F5DB61007CA4A1 /* Date.swift */; };
-		5EF1984927F49F3400673B98 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF1984827F49F3400673B98 /* Image.swift */; };
 		5EFA1CC227EA7A52004C1EAC /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFA1CC127EA7A52004C1EAC /* PostTableViewCell.swift */; };
 		5EFA1CC427EA7A71004C1EAC /* PostListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFA1CC327EA7A71004C1EAC /* PostListView.swift */; };
 		5EFA1CC827EB3D97004C1EAC /* ApiModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFA1CC727EB3D97004C1EAC /* ApiModels.swift */; };
@@ -28,6 +29,8 @@
 
 /* Begin PBXFileReference section */
 		3F77118A0D9C7865968CA9E7 /* libPods-ApiHW.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ApiHW.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E3CD5AD27F99AE400A05937 /* ThreadSafeArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadSafeArray.swift; sourceTree = "<group>"; };
+		5E3CD5AF27F9AB6100A05937 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		5EC5979E27EF389D00E8364B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5ECF5EC027F301AB00C0F02B /* DetailPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPostView.swift; sourceTree = "<group>"; };
 		5ECF5EC227F301D200C0F02B /* DetailPostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPostVC.swift; sourceTree = "<group>"; };
@@ -41,7 +44,6 @@
 		5ECFB0A527EA6F9400FE0081 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5ECFB0A727EA6F9400FE0081 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5ED9ECA227F5DB61007CA4A1 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
-		5EF1984827F49F3400673B98 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		5EFA1CC127EA7A52004C1EAC /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		5EFA1CC327EA7A71004C1EAC /* PostListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListView.swift; sourceTree = "<group>"; };
 		5EFA1CC727EB3D97004C1EAC /* ApiModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiModels.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				5ED9ECA227F5DB61007CA4A1 /* Date.swift */,
+				5E3CD5AF27F9AB6100A05937 /* String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -106,7 +109,7 @@
 		5EFA1CC027EA79D0004C1EAC /* Supp files */ = {
 			isa = PBXGroup;
 			children = (
-				5EF1984827F49F3400673B98 /* Image.swift */,
+				5E3CD5AD27F99AE400A05937 /* ThreadSafeArray.swift */,
 				5EC5979E27EF389D00E8364B /* Constants.swift */,
 				5ECFB09927EA6F8E00FE0081 /* AppDelegate.swift */,
 				5ECFB0A227EA6F9400FE0081 /* Assets.xcassets */,
@@ -255,13 +258,14 @@
 				5ECF5EC127F301AB00C0F02B /* DetailPostView.swift in Sources */,
 				5ECF5ECA27F382CE00C0F02B /* DetailPostLikesAndTimeshampTableViewCell.swift in Sources */,
 				5EFA1CCA27EC9A96004C1EAC /* Networking.swift in Sources */,
-				5EF1984927F49F3400673B98 /* Image.swift in Sources */,
 				5ECF5EC327F301D200C0F02B /* DetailPostVC.swift in Sources */,
 				5EC5979F27EF389D00E8364B /* Constants.swift in Sources */,
 				5ED9ECA327F5DB62007CA4A1 /* Date.swift in Sources */,
 				5EFA1CC427EA7A71004C1EAC /* PostListView.swift in Sources */,
 				5ECF5EC527F30C9800C0F02B /* DetailPostTextTableViewCell.swift in Sources */,
 				5ECF5EC827F3828200C0F02B /* DetailPostImageTableViewCell.swift in Sources */,
+				5E3CD5AE27F99AE400A05937 /* ThreadSafeArray.swift in Sources */,
+				5E3CD5B027F9AB6100A05937 /* String.swift in Sources */,
 				5ECFB09A27EA6F8E00FE0081 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

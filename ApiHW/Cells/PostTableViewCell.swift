@@ -22,7 +22,7 @@ class PostTableViewCell: UITableViewCell {
     let likesCountLabel = UILabel()
     let timeshampLabel = UILabel()
     let separatorLineLabel = UILabel()
-    let formatter: DateFormatter = {
+    private let formatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.timeZone = .current
         formatter.locale = .current
@@ -49,7 +49,7 @@ class PostTableViewCell: UITableViewCell {
         fullTextButton.backgroundColor = .orange
         contentView.addSubview(fullTextButton)
         
-        likeLabel.text = "♥️"
+        likeLabel.text = "🖤"
         likeLabel.textAlignment = .center
         contentView.addSubview(likeLabel)
         
@@ -116,7 +116,7 @@ class PostTableViewCell: UITableViewCell {
     
     func apply(_ vm: PostCellViewModel) {
         titleLabel.text = vm.data.title ?? ""
-        previewTextLabel.text = vm.data.preview_text ?? ""
+        previewTextLabel.text = (vm.data.preview_text ?? "").plainText
         previewTextLabel.numberOfLines = vm.isWider ? 0 : 2
         if vm.isWider {
             fullTextButton.setTitle("показать меньше", for: .normal)
@@ -127,12 +127,6 @@ class PostTableViewCell: UITableViewCell {
         let date = Date(timeIntervalSinceNow: -epochTime)
         let dateString = formatter.string(from: date)
         timeshampLabel.text = dateString
-
-//        let seconds = vm.data.timeshamp ?? 0
-//        let pastDate = Date(timeIntervalSince1970: TimeInterval(seconds))
-//        timeshampLabel.text = "\(pastDate.timeAgoDisplay())"
-        
-        //        timeshampLabel.text = "\(vm.data.timeshamp ?? 0)"
 
     }
 }

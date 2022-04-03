@@ -11,10 +11,10 @@ import SnapKit
 class DetailPostLikesAndTimeshampTableViewCell: UITableViewCell {
 
     private let likeLabel: UILabel = {
-        let uilabel = UILabel()
-        uilabel.text = "♥️"
-        uilabel.textAlignment = .center
-        return uilabel
+        let uiLabel = UILabel()
+        uiLabel.text = "♥️"
+        uiLabel.textAlignment = .center
+        return uiLabel
     }()
     
     private let likesCountLabel: UILabel = {
@@ -29,9 +29,17 @@ class DetailPostLikesAndTimeshampTableViewCell: UITableViewCell {
         return uilabel
     }()
     
+    private let formatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.timeZone = .current
+        formatter.locale = .current
+        formatter.timeStyle = .full
+        formatter.dateFormat = "MM-dd-yyyy HH:mm"
+        return formatter
+    }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
         contentView.addSubview(likeLabel)
         contentView.addSubview(likesCountLabel)
         contentView.addSubview(timeshampLabel)
@@ -45,11 +53,6 @@ class DetailPostLikesAndTimeshampTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-    }
-
-    func setUp(likesCount: Int?, timesShamp: Int?) {
-        likesCountLabel.text = "\(likesCount ?? 0)"
-        timeshampLabel.text = "\(timesShamp ?? 0)"
     }
     
     private func makeConstraints() {
@@ -68,5 +71,14 @@ class DetailPostLikesAndTimeshampTableViewCell: UITableViewCell {
             $0.trailing.equalToSuperview().offset(-10)
             $0.bottom.equalToSuperview().offset(-10)
         }
+    }
+    
+    func setUp(likesCount: Int?, timesShamp: Int?) {
+        likesCountLabel.text = "\(likesCount ?? 0)"
+        
+        let epochTime = TimeInterval(timesShamp ?? 0) / 1000
+        let date = Date(timeIntervalSinceNow: -epochTime)
+        let dateString = formatter.string(from: date)
+        timeshampLabel.text = dateString
     }
 }

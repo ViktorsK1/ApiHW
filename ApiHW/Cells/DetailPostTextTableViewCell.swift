@@ -22,7 +22,7 @@ class DetailPostTextTableViewCell: UITableViewCell {
         let uilabel = UILabel()
         uilabel.numberOfLines = 0
         uilabel.textAlignment = .natural
-        uilabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 20.0)
+        uilabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 19.0)
         return uilabel
     }()
     
@@ -56,11 +56,12 @@ class DetailPostTextTableViewCell: UITableViewCell {
             $0.top.equalTo(titleLabel.snp.bottom).offset(10)
             $0.leading.equalToSuperview().offset(20)
             $0.trailing.equalToSuperview().offset(-20)
+            $0.bottom.equalToSuperview().offset(-10)
         }
     }
     
     func setUp(title: String?, fullText: String?) {
         titleLabel.text = title ?? ""
-        fullTextLabel.text = fullText ?? ""
+        fullTextLabel.text = (fullText ?? "").plainText
     }
 }

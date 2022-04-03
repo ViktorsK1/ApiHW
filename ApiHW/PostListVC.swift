@@ -56,7 +56,6 @@ class PostListVC: UIViewController {
         mainView.apiTableView.delegate = self
         mainView.apiTableView.dataSource = self
         mainView.apiTableView.register(PostTableViewCell.self, forCellReuseIdentifier: "reuseIdentifierTableView")
-        
     }
     
     func setTitle() {

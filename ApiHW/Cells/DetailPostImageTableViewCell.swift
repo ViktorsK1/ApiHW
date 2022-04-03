@@ -10,17 +10,18 @@ import SnapKit
 
 class DetailPostImageTableViewCell: UITableViewCell {
 
-    let fullImageView = UIImageView()
+    private let fullImageView: UIImageView = {
+        let imageView =  UIImageView()
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        addSubview(fullImageView)
+        contentView.addSubview(fullImageView)
         
-        fullImageView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
-        }
-        
+        makeConstraints()
     }
     
     required init?(coder: NSCoder) {
@@ -31,7 +32,17 @@ class DetailPostImageTableViewCell: UITableViewCell {
         super.awakeFromNib()
     }
 
-    func apply(image: PostIDDetailData) {
-//        fullImageView.image = image.images
+    private func makeConstraints() {
+        fullImageView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+            $0.height.equalTo(0)
+        }
+    }
+    
+    func apply(image: UIImage, width: CGFloat) {
+        fullImageView.image = image
+        fullImageView.snp.updateConstraints {
+            $0.height.equalTo(width * image.size.height / image.size.width)
+        }
     }
 }

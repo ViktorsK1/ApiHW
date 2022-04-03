@@ -67,16 +67,12 @@ class NetworkingServise {
     func downloadImage(from url: String, with completion: @escaping(UIImage) -> ()) {
         guard let url = URL(string: url) else { return }
         URLSession.shared.dataTask(with: url) { data, response, error in
-            guard
-                let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
-                let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
-                let data = data, error == nil,
-                let image = UIImage(data: data)
-            else { return }
-            DispatchQueue.main.async() {
-                completion(image)
+            if let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
+               let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
+               let data = data, error == nil,
+               let image = UIImage(data: data) {
+                    completion(image)
             }
         }.resume()
     }
-    
 }
