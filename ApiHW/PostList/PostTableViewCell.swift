@@ -8,8 +8,17 @@
 import UIKit
 import SnapKit
 
-struct PostCellViewModel {
-    let data: PostsDetailData
+//struct PostCellViewModel {
+//    let data: PostsDetailData
+//    var isWider: Bool
+//}
+
+struct PostCellData {
+    let postId: Int
+    let title: String?
+    let previewText: String?
+    let likesCount: Int?
+    let timeString: String?
     var isWider: Bool
 }
 
@@ -18,9 +27,9 @@ class PostTableViewCell: UITableViewCell {
     let titleLabel = UILabel()
     let previewTextLabel = UILabel()
     let fullTextButton = UIButton()
-    let likeLabel = UILabel()
-    let likesCountLabel = UILabel()
-    let timeshampLabel = UILabel()
+//    let likeLabel = UILabel()
+//    let likesCountLabel = UILabel()
+//    let timeshampLabel = UILabel()
     let separatorLineLabel = UILabel()
     private let formatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -134,9 +143,9 @@ class PostTableViewCell: UITableViewCell {
         }
     }
     
-    func apply(_ vm: PostCellViewModel) {
-        titleLabel.text = vm.data.title ?? ""
-        previewTextLabel.text = (vm.data.preview_text ?? "").plainText
+    func apply(_ vm: PostCellData) {
+        titleLabel.text = vm.title ?? ""
+        previewTextLabel.text = (vm.previewText ?? "").plainText
         previewTextLabel.numberOfLines = vm.isWider ? 0 : 2
         if vm.isWider {
             fullTextButton.setTitle("показать меньше", for: .normal)
@@ -149,6 +158,8 @@ class PostTableViewCell: UITableViewCell {
 //        timeshampLabel.text = dateString
 //        likesAndTimeView
 
+        guard let likesCount = vm.likesCount, let timeShamp = vm.timeString else { return }
+        likesAndTimeView.setData(likesCount: likesCount, timesShampText: timeShamp)
     }
     
 //    func setLikesAndTime(_ vm: PostCellViewModel) {

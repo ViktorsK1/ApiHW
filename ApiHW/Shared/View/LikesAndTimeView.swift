@@ -28,15 +28,6 @@ class LikesAndTimeView: UIView {
         return uilabel
     }()
     
-    private let formatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.timeZone = .current
-        formatter.locale = .current
-        formatter.timeStyle = .full
-        formatter.dateFormat = "MM-dd-yyyy HH:mm"
-        return formatter
-    }()
-    
     init() {
         super.init(frame: .zero)
         layer.cornerRadius = 10
@@ -51,14 +42,9 @@ class LikesAndTimeView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setLikesAndTime(_ vm: PostCellViewModel) {
-        likesCountLabel.text = "\(vm.data.likes_count ?? 0)"
-        
-        let epochTime = TimeInterval(vm.data.timeshamp ?? 0) / 1000
-        let date = Date(timeIntervalSinceNow: -epochTime)
-        let dateString = formatter.string(from: date)
-        timeshampLabel.text = dateString
-        
+    func setData(likesCount: Int, timesShampText: String) {
+        likesCountLabel.text = "\(likesCount)"
+        timeshampLabel.text = timesShampText
     }
     
     private func makeConstraints() {

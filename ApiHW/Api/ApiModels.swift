@@ -19,6 +19,12 @@ struct PostsDetailData: Codable {
     let timeshamp: Int?
 }
 
+struct PostDetailData {
+    let title: String?
+    let previwText: String?
+    
+}
+
 struct PostIDData: Codable {
     let post: PostIDDetailData
 }
