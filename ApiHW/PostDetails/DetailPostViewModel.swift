@@ -64,7 +64,3 @@ class DetailPostViewModel {
         }
     }
 }
-
-//DispatchQueue.main.async {
-//    self?.mainView.detailApiTableView.reloadSections(.init(integer: 1), with: .none)
-//}

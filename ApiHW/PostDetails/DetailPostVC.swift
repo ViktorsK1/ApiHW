@@ -44,9 +44,7 @@ extension DetailPostVC: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        guard let image = viewModel.images else { return }
         section == 1 ? viewModel.images.count : 1
-        
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

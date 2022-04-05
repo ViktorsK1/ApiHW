@@ -17,6 +17,7 @@ class PostListViewModel {
             view?.dataWasUpdated()
         }
     }
+    
     private let networkingServise = NetworkingServise()
     private let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -37,7 +38,7 @@ class PostListViewModel {
         cellDetailData[tag].isWider = !cellDetailData[tag].isWider
         view?.dataWasUpdated()
     }
-
+    
     func viewBecomesReady() {
         networkingServise.fetchPosts { [weak self] result in
             switch result {
@@ -49,13 +50,10 @@ class PostListViewModel {
                             let date = Date(timeIntervalSinceNow: -epochTime)
                             return self?.dateFormatter.string(from: date) ?? ""
                         }
-                     
                         return PostCellData(postId: post.postId, title: post.title, previewText: post.preview_text, likesCount: post.likes_count, timeString: timeShamp, isWider: false)
-                        
                     })
                     .sorted(by: { vm1, vm2 in
                         vm1.likesCount ?? 1 > vm2.likesCount ?? 0
-
                     })
             case .failure(let error):
                 print(error)
