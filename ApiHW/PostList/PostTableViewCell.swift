@@ -38,7 +38,7 @@ class PostTableViewCell: UITableViewCell {
     let fullTextButton: UIButton = {
         let uiButton = UIButton()
         uiButton.setTitle("показать больше", for: .normal)
-        uiButton.backgroundColor = .orange
+        uiButton.backgroundColor = .black
         return uiButton
     }()
     

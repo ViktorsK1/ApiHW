@@ -12,7 +12,7 @@ class DetailPostLikesAndTimeshampTableViewCell: UITableViewCell {
 
     private let likeLabel: UILabel = {
         let uiLabel = UILabel()
-        uiLabel.text = "♥️"
+        uiLabel.text = "🖤"
         uiLabel.textAlignment = .center
         return uiLabel
     }()
@@ -20,12 +20,14 @@ class DetailPostLikesAndTimeshampTableViewCell: UITableViewCell {
     private let likesCountLabel: UILabel = {
        let uilabel = UILabel()
         uilabel.textAlignment = .left
+        uilabel.font = .boldSystemFont(ofSize: 12)
         return uilabel
     }()
     
     private let timeshampLabel: UILabel = {
         let uilabel = UILabel()
         uilabel.textAlignment = .right
+        uilabel.font = .systemFont(ofSize: 12)
         return uilabel
     }()
     
@@ -62,12 +64,12 @@ class DetailPostLikesAndTimeshampTableViewCell: UITableViewCell {
         }
         
         likesCountLabel.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(10)
+            $0.top.equalToSuperview().offset(14)
             $0.leading.equalTo(likeLabel.snp.trailing).offset(10)
         }
         
         timeshampLabel.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(10)
+            $0.top.equalToSuperview().offset(14)
             $0.trailing.equalToSuperview().offset(-10)
             $0.bottom.equalToSuperview().offset(-10)
         }
